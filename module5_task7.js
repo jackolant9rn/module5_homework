@@ -1,21 +1,19 @@
 let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '10', NaN, null];
-let x = 0; // чётные
-let y = 0; // нечётные
-let z = 0; // нулевые элементы
+let countEven = 0;
+let countOdd = 0;
+let countZero = 0;
 for (let i=0; i < arr.length; ++i) {
-  if (typeof arr[i] != 'number') {
-    
-  } else if (isNaN(arr[i]) === true) {
-    
+  if (typeof arr[i] != 'number' || isNaN(arr[i]) === true) {
+    continue;
   } else if (arr[i] === 0) {
-    ++z
+    ++countZero
   } else if (arr[i] % 2 === 0) {
-    ++x
+    ++countEven
   } else {
-    ++y
+    ++countOdd
   }
 }
 
-console.log('Чётных элементов в массиве - ' + x)
-console.log('Нечётных элементов в массиве - ' + y)
-console.log('Нулевых элементов в массиве - ' + z)
+console.log('Чётных элементов в массиве - ' + countEven)
+console.log('Нечётных элементов в массиве - ' + countOdd)
+console.log('Нулевых элементов в массиве - ' + countZero)
